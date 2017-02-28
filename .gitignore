@@ -1,0 +1,6 @@
+/node_modules
+/.idea
+/npm-debug.log
+/WEBINF/data
+/db/article.db
+/db/user.db

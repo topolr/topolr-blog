@@ -1,0 +1,20 @@
+<!--[performance]-->
+<div class="performance-title">
+    <div class="performance-title-a" data-find="title"></div>
+    <div class="performance-title-refresh" data-bind="click:refresh"><i class="fa fa-spinner9"></i></div>
+</div>
+<div class="performance-container">
+    <%for(var i in data.list){%>
+    <div class="trow" @cache(data.list[i]) data-bind="click:row">
+         <div class="test-data">
+            <span class="<%=(i==data.selected?"selected":"");%>"><%=data.list[i].label;%></span>
+        </div>
+    </div>
+    <%}%>
+</div>
+<!--[react]-->
+<div class="performance-title">
+    <div class="performance-title-a" data-find="title"></div>
+    <div class="performance-title-refresh"></div>
+</div>
+<div class="performance-container" data-find="con"></div>

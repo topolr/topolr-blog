@@ -1,0 +1,5 @@
+/**
+ * @packet site.service.admin;
+ * @require site.service.apiconfig;
+ */
+Module({name:"userservice",extend:"publicservice",init:function(){this.start()},service_login:function(t){return this.stop(),this.postRequest(require("@apiconfig").get("login"),t).scope(this).then(function(t){return this.start(),this.data=t,t},function(t){return this.start(),t})},service_edit:function(t){return this.stop(),this.postRequest(require("@apiconfig").get("edituserinfo"),t).scope(this).then(function(e){return this.start(),$.extend(this.data,t),e},function(t){return this.start(),t})}}),Module({name:"articleservice",extend:"privateservice",init:function(){this.start()},service_fetch:function(t){return this.stop(),this.postRequest(require("@apiconfig").get("articledetail"),t).scope(this).then(function(t){return this.start(),t},function(){this.start(),promise.reject(e)})}});

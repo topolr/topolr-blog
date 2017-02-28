@@ -1,0 +1,22 @@
+{
+  "name": "topolr-doc",
+  "version": "0.0.1",
+  "description": "dev doc project of topolr",
+  "main": "main.js",
+  "scripts": {
+    "init": "node init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/hou80houzhu/topolr-doc.git"
+  },
+  "keywords": [
+    "doc",
+    "topolr"
+  ],
+  "author": "hou80houzhu",
+  "license": "MIT",
+  "dependencies": {
+    "topolr-util": "^0.1.17"
+  }
+}

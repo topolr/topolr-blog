@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%=data.title;%></title>
+    <meta charset="UTF-8">
+    <meta name="description" content="<%=data.description;%>">
+    <meta name="Keywords" content="<%=data.keywords;%>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="<%=request.getHttpPath();%>app/topolr.js" type="text/javascript"></script>
+    <script>
+        App({
+    "sitePath": "<%=request.getHttpPath();%>",
+    "basePath": "app/dist/",
+    "title": "doc",
+    "description": "doc",
+    "boot": "option.root.blog",
+    "map": {
+        "d": true,
+        "m": {
+            "p": {
+                "config": "3d81191e06",
+                "demo.chart.chart": "8357c8f08c",
+                "demo.chart.dombuilder": "710c01fb1c",
+                "demo.chart.graph": "17227b4426",
+                "demo.hello.base": "af49bcdab1",
+                "demo.performance.base": "63ab9599a6",
+                "demo.photo.canvas": "65b87078ea",
+                "demo.photo.file": "34f1f70b65",
+                "demo.photo.photo": "ef59fb0111",
+                "demo.todos.service.testservice": "d57fb181bc",
+                "demo.todos.todos": "5f1bb8802f",
+                "demo.todos.todos2": "f7cba1bfdb",
+                "option.about": "fddf05aa4e",
+                "option.admin": "bc4aeac810",
+                "option.article": "2950ba14c9",
+                "option.demo": "b14d7d22ff",
+                "option.detail": "eff702f106",
+                "option.editarticle": "ee3c34ad78",
+                "option.index": "0ce5a3e754",
+                "option.login": "8643c9b545",
+                "option.nofind": "1949b7a7b5",
+                "option.root": "fa233085de",
+                "option.userinfo": "8739016019",
+                "site.admin": "5295ae2bf9",
+                "site.service.admin": "898e486044",
+                "site.service.apiconfig": "e914c8486a",
+                "site.service.base": "5096983a30",
+                "site.service.site": "fa61306c15",
+                "site.setting": "3fad7e3f06",
+                "site.site": "8411f1e716",
+                "util.editor": "4175a0682f",
+                "util.file": "07144b2f98",
+                "util.images": "03911758e8",
+                "util.router": "3c3afc23f8",
+                "util.uikit": "1bd99ab1fb"
+            },
+            "c": {
+                "demo.chart.style.chart": "0d6eb00733",
+                "demo.hello.style.hello": "e097bf82de",
+                "demo.performance.style.style": "094028462a",
+                "demo.photo.style.photocutter": "8892f8e31a",
+                "demo.todos.style.font": "dd3cb28da6",
+                "demo.todos.style.todostyle": "afeed3b112",
+                "site.style.grid": "6a901b07b8",
+                "site.style.main": "de03f196e6",
+                "site.style.style": "a471e34377",
+                "util.style.images": "80c5adaef4",
+                "util.style.uikit": "f2024b2adc"
+            },
+            "t": {
+                "demo.hello.template.temp": "3159eb25a1",
+                "demo.performance.template.temp": "9803cefcfd",
+                "demo.todos.template.temp": "7fc6d29dc0",
+                "site.template.admintemp": "e448f711f2",
+                "site.template.sitetemp": "872858ddcb",
+                "util.template.imagestemp": "7a615cee41"
+            },
+            "j": {
+                "demo.performance.react": "79f975a42b",
+                "lib.ace.ace": "3fe59e8cb2"
+            }
+        },
+        "c": {
+            "option-root-c1": {
+                "p": [
+                    "option.root",
+                    "site.site",
+                    "site.setting",
+                    "util.router",
+                    "config",
+                    "site.service.site",
+                    "site.service.apiconfig",
+                    "site.service.base",
+                    "util.editor",
+                    "util.uikit"
+                ],
+                "c": [
+                    "util.style.uikit",
+                    "site.style.grid",
+                    "site.style.main",
+                    "site.style.style"
+                ],
+                "t": [
+                    "site.template.sitetemp"
+                ]
+            },
+            "option-admin-c2": {
+                "p": [
+                    "option.admin",
+                    "site.admin",
+                    "site.service.admin",
+                    "util.images",
+                    "util.file"
+                ],
+                "c": [
+                    "util.style.images"
+                ],
+                "t": [
+                    "util.template.imagestemp",
+                    "site.template.admintemp"
+                ]
+            },
+            "option-article-c2": {
+                "p": [
+                    "option.article",
+                    "site.admin",
+                    "site.service.admin",
+                    "util.images",
+                    "util.file"
+                ],
+                "c": [
+                    "util.style.images"
+                ],
+                "t": [
+                    "util.template.imagestemp",
+                    "site.template.admintemp"
+                ]
+            },
+            "option-demo-c2": {
+                "p": [
+                    "option.demo",
+                    "demo.todos.todos2",
+                    "demo.todos.service.testservice"
+                ],
+                "t": [
+                    "demo.todos.template.temp"
+                ],
+                "c": [
+                    "demo.todos.style.todostyle",
+                    "demo.todos.style.font"
+                ]
+            },
+            "option-editarticle-c2": {
+                "p": [
+                    "option.editarticle",
+                    "site.admin",
+                    "site.service.admin",
+                    "util.images",
+                    "util.file"
+                ],
+                "c": [
+                    "util.style.images"
+                ],
+                "t": [
+                    "util.template.imagestemp",
+                    "site.template.admintemp"
+                ]
+            },
+            "option-login-c2": {
+                "p": [
+                    "option.login",
+                    "site.admin",
+                    "site.service.admin",
+                    "util.images",
+                    "util.file"
+                ],
+                "c": [
+                    "util.style.images"
+                ],
+                "t": [
+                    "util.template.imagestemp",
+                    "site.template.admintemp"
+                ]
+            },
+            "option-userinfo-c2": {
+                "p": [
+                    "option.userinfo",
+                    "site.admin",
+                    "site.service.admin",
+                    "util.images",
+                    "util.file"
+                ],
+                "c": [
+                    "util.style.images"
+                ],
+                "t": [
+                    "util.template.imagestemp",
+                    "site.template.admintemp"
+                ]
+            }
+        },
+        "id": "15041ff111c3e08269f4cb83519ac7b2"
+    }
+}).boot();
+    </script>
+</head>
+<body><%=data.body;%></body>
+</html>

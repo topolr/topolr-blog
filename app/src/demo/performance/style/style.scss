@@ -1,0 +1,37 @@
+@import "base.scss";
+.performance{
+    @include absolute;
+    @include shadow(0 1px 4px 0 rgba(0,0,0,0.14));
+    border:1px solid #D7D7D7;
+    margin:10px;
+    background:white;
+    .performance-title{
+        line-height:45px;
+        @include displayflex;
+        .performance-title-a{
+            @include flex(1);
+            padding:0 10px 0 10px;
+        }
+        .performance-title-refresh{
+            width:45px;
+            text-align: center;
+        }
+    }
+    .performance-container{
+        border-top:1px solid #D7D7D7;
+        @include absolute(45px,0,0,0);
+        overflow:auto;
+        .trow{
+            border-bottom:1px solid #EAEAEA;
+            span{
+                line-height:30px;
+                display:block;
+                padding:0 10px 0 10px;
+                &.selected{
+                    background:#4D8CF5;
+                    color:white;
+                }
+            }
+        }
+    }
+}

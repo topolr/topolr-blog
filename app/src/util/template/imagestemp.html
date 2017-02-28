@@ -1,0 +1,15 @@
+<!--[imagesuploader]-->
+<div class="imagesuploader-label"><%=data.label;%></div>
+<div class='imagesuploader-container' style="height:<%=data.height;%>">
+    <div class='imagesuploader-image'>
+        <%if(data.image){%>
+        <div class='imagesuploader-image-bg' style="background-image:url(<%=data.image;%>)"></div>
+        <div class='imageuploader-progress'></div>
+        <%}%>
+    </div>
+    <div class="imagesuploader-image"><div class="imagesuploader-image-tip">select images</div></div>
+    <div class='imagesuploader-filebtnplus'>
+        <div class='imagesuploader-addicon'></div>
+        <input multiple='multiple' type='file' data-bind='change:file' accept='image/gif,image/jpeg,image/jpg,image/png,image/bmp'/>
+    </div>
+</div>
