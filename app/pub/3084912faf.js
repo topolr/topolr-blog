@@ -1,4 +1,0 @@
-/**
- * @packet config;
- */
-module.exports={index:{name:"option.index.page",cetus:!0},"index.html":{name:"option.index.page",cetus:!0},"test.html":{name:"option.index.page",cetus:!0},"index.nsp":{name:"option.index.page",cetus:!0},404:{name:"option.nofind.page",cetus:!0},detail:{name:"option.detail.page",cetus:!0},login:{name:"option.login.page",cetus:!1},admin:{name:"option.article.page",cetus:!1},about:{name:"option.about.page",cetus:!0},"admin/article":{name:"option.article.page",cetus:!1},"admin/addarticle":{name:"option.editarticle.page",cetus:!1},"admin/editarticle":{name:"option.editarticle.page",cetus:!1},"admin/userinfo":{name:"option.userinfo.page",cetus:!1},"demo/todos":{name:"option.demo.todos",cetus:!1}};

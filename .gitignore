@@ -4,3 +4,5 @@
 /WEBINF/data
 /db/article.db
 /db/user.db
+/app/pub
+/app/dist
