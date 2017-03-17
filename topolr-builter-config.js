@@ -1,5 +1,5 @@
 /*
- * topolr-builter version 0.5.0
+ * topolr-builter version 1.0.0
  * built product developed by topolr web framework
  * topolr-builter-config:
  *   basePath      - app base path
@@ -10,15 +10,17 @@
  *   output        - output folder,relative basePath
  *   pageTemp      - boot index page,relative basePath
  *   outMap        - out map file is or not make
+ *   devport       - develop mode will open a socket service to connect to chrome extension
  *   ignore        - scan without files
  *       -default:['*.DS_Store','*.*___jb_tmp___']
  *   maker         - custom maker mapping
- *       -like:{makerName:function(content,done){
- *                   done(dosomethind(content));
+ *       -like:{makerName:function(content,option,done){
+ *                   done(dosomethind(content,option));
  *              }}
  *       -default maker:
  *         'jsmaker','lessparser','sassparser','cssmaker','cssprefixmaker'
  *         'htmlmaker','mdparser','jsonmaker','templatemaker','babelmaker'
+ *   makerOption   - custom maker option {makerName:{}}
  *   sequnce       - make sequnce
  *       -default sequnce:
  *          js:['jsmaker']
@@ -49,10 +51,11 @@ module.exports={
     maker:{},
     develop:{
         output:"../dist/",
-        pageTemp:"./../../index.nsp",
+        pageTemp:"./../../test.nsp",
         outMap:false,
         sequnce:{},
         outmapSequnce:{},
+        devport:8099,
     },
     publish:{
         output:"../pub/",

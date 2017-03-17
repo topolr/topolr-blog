@@ -5,7 +5,7 @@
  * @require site.service.apiconfig;
  * @require util.uikit;
  * @require util.images;
- * @require util.editor;
+ * @require site.editor;
  * @template site.template.admintemp;
  * @css site.style.main;
  */

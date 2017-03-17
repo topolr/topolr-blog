@@ -17,6 +17,7 @@
   "author": "hou80houzhu",
   "license": "MIT",
   "dependencies": {
+    "topolr-module-util": "0.0.2",
     "topolr-util": "^0.1.17"
   }
 }

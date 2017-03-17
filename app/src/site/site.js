@@ -6,7 +6,7 @@
  * @require site.service.site;
  * @require site.service.base;
  * @require site.service.apiconfig;
- * @require util.editor;
+ * @require site.editor;
  * @require util.uikit;
  * @css site.style.grid;
  * @css site.style.main;
