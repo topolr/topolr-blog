@@ -51,7 +51,7 @@ module.exports={
     maker:{},
     develop:{
         output:"../dist/",
-        pageTemp:"./../../test.nsp",
+        pageTemp:"./../../index.nsp",
         outMap:false,
         sequnce:{},
         outmapSequnce:{},

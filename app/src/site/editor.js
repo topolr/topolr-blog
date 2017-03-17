@@ -1,5 +1,5 @@
 /**
- * @packet util.editor;
+ * @packet site.editor;
  * @map (js)lib.ace.ace;
  */
 Module({

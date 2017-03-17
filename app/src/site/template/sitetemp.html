@@ -177,7 +177,7 @@
         <%if(data[i].comment){%>
         <div class="comment-list-item-subcomment">
             <%for(var t=0;t<data[i].comment.length;t++){%>
-            <div class="comment-list-item-content">
+            <div class="comment-list-item-content" data-find="subs">
                 <span><%=data[i].comment[t].name;%>：</span>
                 <%=data[i].comment[t].content;%>
                 <span><@date date="{{data[i].comment[t].time}}"/></span>
