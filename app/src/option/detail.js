@@ -13,7 +13,7 @@ Option({
         ],
         override: {
             onendinit: function () {
-                // this.setContentPage();
+                this.setContentPage();
             },
             event_contentdone:function () {
                 App().snapshot();

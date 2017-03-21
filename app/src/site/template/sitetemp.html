@@ -161,6 +161,7 @@
     </div>
 </div>
 <!--[commentlist]-->
+<%if(data.length>0){%>
 <%for(var i in data){%>
 <div class="comment-list-item" data-find="item">
     <div class="comment-list-item-left">
@@ -174,10 +175,10 @@
             </div>
         </div>
         <div class="comment-list-item-content"><%=data[i].content;%></div>
-        <%if(data[i].comment){%>
+        <%if(data[i].comment&&data[i].comment.length>0){%>
         <div class="comment-list-item-subcomment">
             <%for(var t=0;t<data[i].comment.length;t++){%>
-            <div class="comment-list-item-content" data-find="subs">
+            <div class="comment-list-item-content" data-bind="click:tosubreply" @cache({a:data[i],b:data[i].comment[t]})>
                 <span><%=data[i].comment[t].name;%>：</span>
                 <%=data[i].comment[t].content;%>
                 <span><@date date="{{data[i].comment[t].time}}"/></span>
@@ -189,9 +190,10 @@
     </div>
 </div>
 <%}%>
+<%}%>
 <!--[commentreply]-->
 <div class="commentreply-con">
-    <div class="commentreply-title">Reply Comment</div>
+    <div class="commentreply-title"><%=data.title;%></div>
     <div class="commentreply-body">
         <div class="commentreply-input" data-find="input">
             <input type="text" placeholder="your name" name="name"/>

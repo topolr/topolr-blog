@@ -1,6 +1,7 @@
 /**
  * @packet controller;
  */
+var topolr=require("topolr-util");
 Module({
     name: 'base',
     extend: "controller",
@@ -115,7 +116,27 @@ Module({
             });
         }).then(function (data) {
             if (data.length > 0) {
-                return this.getSuccessView(data[0]);
+                var result=data[0],ps=topolr.promise(),ths=this;
+                var marked = require('marked');
+                marked.setOptions({
+                    renderer: new marked.Renderer(),
+                    gfm: true,
+                    tables: true,
+                    breaks: false,
+                    pedantic: false,
+                    sanitize: false,
+                    smartLists: true,
+                    smartypants: false
+                });
+                marked(result.content, function (err, r) {
+                    if (err){
+                        console.log(err)
+                    }else{
+                        result.content=r;
+                    }
+                    ps.resolve(ths.getSuccessView(result));
+                });
+                return ps;
             } else {
                 return this.getErrorView();
             }

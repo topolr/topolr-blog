@@ -174,7 +174,7 @@ Module({
         });
     },
     service_scroll: function () {
-        if (this.finders("loading").get(0)) {
+        if(this.finders("loading").get(0)) {
             var a = this.finders("loading").get(0).offsetTop;
             if (a && $("body").scrollTop() > this.finders("loading").get(0).offsetTop - $(window).height()) {
                 this.finders("loading").show();
@@ -246,9 +246,11 @@ Module({
     extend: "view",
     className: "papercontent",
     template: "@sitetemp.papercontent",
-    autodom: true,
     init: function () {
         this.render("no content");
+    },
+    update:function (content) {
+        this.dom.children(0).html(content);
     }
 });
 Module({
@@ -330,7 +332,6 @@ Module({
         });
     },
     event_subreplycommit:function (e) {
-        console.log(e.data)
         var r=this.getChildAt(2).getValue();
         r["articleid"]=$.serialize.queryObject(window.location.href)["id"];
         r["commentid"]=e.data.id;
@@ -341,6 +342,36 @@ Module({
             this.getChildAt(0).refresh();
         }).fail(function () {
             $.loadingbar().showError();
+        });
+    },
+    event_tosubreplycommit:function (e) {
+        console.log(e.data)
+        var r=this.getChildAt(2).getValue();
+        r["articleid"]=$.serialize.queryObject(window.location.href)["id"];
+        r["commentid"]=e.data.a.id;
+        r.name=r.name+" reply "+e.data.b.name;
+        $.loadingbar().showLoading();
+        this.getService("comment").trigger("addsubcomment",r).scope(this).done(function () {
+            this.getChildAt(2).remove();
+            $.loadingbar().showSuccess();
+            this.getChildAt(0).refresh();
+        }).fail(function () {
+            $.loadingbar().showError();
+        });
+    },
+    event_toreply:function (e) {
+        this.addChild({
+            type:"@.commentreply",
+            parameters:e.data,
+            option:{
+                title:"tosubreplay",
+                override:{
+                    event_reply:function (e) {
+                        this.dispatchEvent("tosubreplycommit",this.parameters);
+                        e.stopPropagation();
+                    }
+                }
+            }
         });
     }
 });
@@ -372,12 +403,6 @@ Module({
             var a = new Date(parseInt(attrs.date));
             var b = ["Jan", "Feb", "Mar", "Apr", "May ", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             return (a.getDate() || "") + " " + (b[a.getMonth()] || "") + " " + (a.getFullYear() || "");
-        },
-        test: function (attrs, renderbody, isbody) {
-            return renderbody({
-                data: "aa",
-                content: attrs.date
-            });
         }
     },
     init: function () {
@@ -395,6 +420,9 @@ Module({
     },
     bind_subreply:function (dom) {
         this.dispatchEvent("subreply",dom.cache());
+    },
+    bind_tosubreply:function (dom) {
+        this.dispatchEvent("toreply",dom.cache());
     }
 });
 Module({
@@ -402,8 +430,11 @@ Module({
     extend:"view",
     template:"@sitetemp.commentreply",
     className:"commentreply",
+    option:{
+        title:"Reply Comment"
+    },
     init:function () {
-        this.render();
+        this.render(this.option);
         setTimeout(function () {
             this.dom.addClass("show");
         }.bind(this),10);

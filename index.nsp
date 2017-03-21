@@ -25,13 +25,13 @@
                 "lib.ace.ace": "3fe59e8cb2"
             },
             "p": {
-                "site.admin": "656d664fa0",
+                "site.admin": "a8d506aca1",
                 "site.service.admin": "06e7e41d68",
                 "site.service.apiconfig": "e914c8486a",
-                "site.service.base": "5096983a30",
+                "site.service.base": "cd2f3d1589",
                 "site.service.site": "fa61306c15",
                 "site.setting": "3fad7e3f06",
-                "site.site": "d837669097",
+                "site.site": "4782f144be",
                 "util.editor": "4175a0682f",
                 "util.file": "07144b2f98",
                 "util.images": "03911758e8",
@@ -41,7 +41,7 @@
                 "option.about": "fddf05aa4e",
                 "option.admin": "bc4aeac810",
                 "option.article": "2950ba14c9",
-                "option.detail": "eff702f106",
+                "option.detail": "c0e70fc7e9",
                 "option.editarticle": "ee3c34ad78",
                 "option.index": "0ce5a3e754",
                 "option.login": "8643c9b545",
@@ -59,7 +59,7 @@
             },
             "t": {
                 "site.template.admintemp": "e448f711f2",
-                "site.template.sitetemp": "822f6f22cd",
+                "site.template.sitetemp": "28e576099f",
                 "util.template.imagestemp": "7a615cee41"
             }
         },

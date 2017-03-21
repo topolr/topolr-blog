@@ -135,7 +135,7 @@ Module({
         dom.click(function () {
             var title = this.groups("title").items("input").val();
             var desc = this.groups("desc").items("input").val();
-            var content = this.editor.getValue();
+            var content = this.getValue();
             var checked = false;
             if (title) {
                 if (desc) {

@@ -46,7 +46,7 @@ Module({
                 size: this.option.pagesize
             })).scope(this).then(function (data) {
                 this.start();
-                this.data = this.data.concat(data);
+                this.data = this.data.concat(data||[]);
                 this.trigger();
                 if(data.length<this.option.pagesize){
                     this._isend=true;
