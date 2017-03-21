@@ -90,7 +90,6 @@ Module({
     "/list": function () {
         return this.getStore("article").scope(this).then(function (db) {
             var a = this.request.getParameters(["from", "size"]);
-            console.log(JSON.stringify(a));
             return db.findBy({}, {
                 title: 1,
                 desc: 1,

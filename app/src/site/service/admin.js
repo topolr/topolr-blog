@@ -44,7 +44,6 @@ Module({
             return e;
         },function () {
             this.start();
-            promise.reject(e);
         });
     }
 });

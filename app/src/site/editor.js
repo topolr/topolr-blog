@@ -12,10 +12,10 @@ Module({
         var t=module.currentPath.split("/");
         t.pop();
         t.pop();
-        $().create("script").attr("src",t.join("/")+"/lib/ace/ace.js").attr("type","text/noload").appendTo("head");
+        $().create("script").attr("src",t.join("/")+"/lib/ace/ace.js").attr("type","text/unload").appendTo("head");
         module.getMapSource("@ace").scope(this).done(function () {
             var id = $.util.randomid(8);
-            $().create("pre").css({height: height+"px"}).attr("id", id).appendTo(dom);
+            $().create("pre").css({height: "100%"}).attr("id", id).appendTo(dom);
             var editor = window.ace.edit(id);
             editor.setTheme("ace/theme/github");
             editor.getSession().setMode("ace/mode/markdown");

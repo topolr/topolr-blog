@@ -102,12 +102,14 @@ Module({
         })
     },
     service_scroll:function () {
-        var a = this.finders("loading").get(0).offsetTop;
-        if (a && $("body").scrollTop() > this.finders("loading").get(0).offsetTop - $(window).height()) {
-            this.finders("loading").show();
-            this.getService("list").trigger("next").scope(this).always(function () {
-                this.finders("loading").hide();
-            });
+        if(this.finders("loading").get(0)) {
+            var a = this.finders("loading").get(0).offsetTop;
+            if (a && $("body").scrollTop() > this.finders("loading").get(0).offsetTop - $(window).height()) {
+                this.finders("loading").show();
+                this.getService("list").trigger("next").scope(this).always(function () {
+                    this.finders("loading").hide();
+                });
+            }
         }
     },
     service_firstpage:function () {
@@ -179,7 +181,7 @@ Module({
             return t;
         }
     },
-    event_editdone:function () {
+    event_editordone:function () {
         var query=$.serialize.queryObject(window.location.href);
         if (query) {
             this.getChildAt(0).option.url=sitePath+"/api/admin/article/edit";
@@ -189,6 +191,10 @@ Module({
                 console.log(a)
             });
         }
+    },
+    update:function(data) {
+        this.setValue(data.content);
+        this.original("update",data);
     }
 });
 Module({
