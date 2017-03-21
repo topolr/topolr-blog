@@ -30,42 +30,42 @@
         <div class="row mid-fix on480-row-2col on768-row-3col">
             <div class="span1-6">
                 <a class="base-header-projects-item" href="http://brightjs.org" target="_blank">
-                    <img src="site/style/images/brightjs.png"/>
+                    <img src="site/style/images/01.png"/>
                     <div class="base-header-projects-item-tip">An awesome web framework.</div>
                     <div class="base-header-projects-item-name">BrightJS</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brightbuilder" target="_blank">
-                    <img src="site/style/images/brightbuilder.png"/>
+                    <img src="site/style/images/02.png"/>
                     <div class="base-header-projects-item-tip">Build the projects which run with the BrightJS web framework.</div>
                     <div class="base-header-projects-item-name">BrightBuilder</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brighttoolkit" target="_blank">
-                    <img src="site/style/images/brighttoolkit.png"/>
+                    <img src="site/style/images/03.png"/>
                     <div class="base-header-projects-item-tip">Chrome Develop Toolkit for BrightJS Projects</div>
                     <div class="base-header-projects-item-name">BrightToolkit</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/corgiserver" target="_blank">
-                    <img src="site/style/images/corgiserver.png"/>
+                    <img src="site/style/images/04.png"/>
                     <div class="base-header-projects-item-tip">A web server running javascript like tomcat.</div>
                     <div class="base-header-projects-item-name">corgiserver</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brightserver" target="_blank">
-                    <img src="site/style/images/pagemaker.png"/>
+                    <img src="site/style/images/05.png"/>
                     <div class="base-header-projects-item-tip">Java web MVC framework. PageMaker is a part of it.To build custom and responsibility website.</div>
                     <div class="base-header-projects-item-name">PageMaker</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/corgiblog" target="_blank">
-                    <img src="site/style/images/dashboard.png"/>
+                    <img src="site/style/images/06.png"/>
                     <div class="base-header-projects-item-tip">Base on BrightJS framework,A dashboard UI</div>
                     <div class="base-header-projects-item-name">DashBoard</div>
                 </a>
@@ -162,34 +162,41 @@
 </div>
 <!--[commentlist]-->
 <%if(data.length>0){%>
-<%for(var i in data){%>
-<div class="comment-list-item" data-find="item">
-    <div class="comment-list-item-left">
-        <div><i class="fa fa-more_vert"></i></div>
-    </div>
-    <div class="comment-list-item-right">
-        <div class="comment-list-item-basic">
-            <div class="comment-list-item-basic-a">
-                <div class="comment-list-item-name"><%=data[i].name;%></div>
-                <div class="comment-list-item-time"><@date date="{{data[i].time}}"/></div>
-            </div>
+    <%for(var i in data){%>
+    <div class="comment-list-item" data-find="item">
+        <div class="comment-list-item-left">
+            <div><i class="fa fa-more_vert"></i></div>
         </div>
-        <div class="comment-list-item-content"><%=data[i].content;%></div>
-        <%if(data[i].comment&&data[i].comment.length>0){%>
-        <div class="comment-list-item-subcomment">
-            <%for(var t=0;t<data[i].comment.length;t++){%>
-            <div class="comment-list-item-content" data-bind="click:tosubreply" @cache({a:data[i],b:data[i].comment[t]})>
-                <span><%=data[i].comment[t].name;%>：</span>
-                <%=data[i].comment[t].content;%>
-                <span><@date date="{{data[i].comment[t].time}}"/></span>
+        <div class="comment-list-item-right">
+            <div class="comment-list-item-basic">
+                <div class="comment-list-item-basic-a">
+                    <div class="comment-list-item-name"><%=data[i].name;%></div>
+                    <div class="comment-list-item-time"><@date date="{{data[i].time}}"/></div>
+                </div>
+            </div>
+            <div class="comment-list-item-content"><%=data[i].content;%></div>
+            <%if(data[i].comment&&data[i].comment.length>0){%>
+            <div class="comment-list-item-subcomment">
+                <%for(var t=0;t<data[i].comment.length;t++){%>
+                <div class="comment-list-item-content" data-bind="click:tosubreply" @cache({a:data[i],b:data[i].comment[t]})>
+                    <%
+                    var _ad=data[i].comment[t].name.split("|");
+                    %>
+                    <%if(_ad.length>1){%>
+                        <span><%=_ad[0];%></span> 回复 <span><%=_ad[1];%>: </span>
+                    <%}else{%>
+                        <span><%=data[i].comment[t].name;%>：</span>
+                    <%}%>
+                    <span><%=data[i].comment[t].content;%></span>
+                    <span><@date date="{{data[i].comment[t].time}}"/></span>
+                </div>
+                <%}%>
             </div>
             <%}%>
+            <div class="comment-list-item-rep" @cache(data[i])  data-bind="click:subreply">add a comment</div>
         </div>
-        <%}%>
-        <div class="comment-list-item-rep" @cache(data[i])  data-bind="click:subreply">add a comment</div>
     </div>
-</div>
-<%}%>
+    <%}%>
 <%}%>
 <!--[commentreply]-->
 <div class="commentreply-con">

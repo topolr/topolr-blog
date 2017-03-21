@@ -345,11 +345,10 @@ Module({
         });
     },
     event_tosubreplycommit:function (e) {
-        console.log(e.data)
         var r=this.getChildAt(2).getValue();
         r["articleid"]=$.serialize.queryObject(window.location.href)["id"];
         r["commentid"]=e.data.a.id;
-        r.name=r.name+" reply "+e.data.b.name;
+        r.name=r.name+"|"+e.data.b.name.split("|")[0];
         $.loadingbar().showLoading();
         this.getService("comment").trigger("addsubcomment",r).scope(this).done(function () {
             this.getChildAt(2).remove();

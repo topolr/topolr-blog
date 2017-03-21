@@ -31,7 +31,7 @@
                 "site.service.base": "cd2f3d1589",
                 "site.service.site": "fa61306c15",
                 "site.setting": "3fad7e3f06",
-                "site.site": "4782f144be",
+                "site.site": "8f3488bbfc",
                 "util.editor": "4175a0682f",
                 "util.file": "07144b2f98",
                 "util.images": "03911758e8",
@@ -59,7 +59,7 @@
             },
             "t": {
                 "site.template.admintemp": "e448f711f2",
-                "site.template.sitetemp": "28e576099f",
+                "site.template.sitetemp": "367bca63fd",
                 "util.template.imagestemp": "7a615cee41"
             }
         },
