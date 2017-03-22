@@ -283,11 +283,6 @@
 .paperheader{
     height:100%;
     position:relative;
-    background-attachment: fixed;
-    background-image:url(images/test.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom center;
     background-color:black;
     width:100%;
     overflow:hidden;
@@ -300,6 +295,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom center;
+        background-attachment: fixed;
+        opacity:0;
     }
     .paperheader-bg{
         position: absolute;

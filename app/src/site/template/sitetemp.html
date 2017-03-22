@@ -99,7 +99,7 @@
 <div class="papercontent-con"><%=data;%></div>
 <!--[paperheader]-->
 <%if(data.image){%>
-<div class="paperheader-image-bg" style="background-image:url(<%=data.image;%>);"></div>
+<div class="paperheader-image-bg" data-find="bgimg" @cache(data.image)></div>
 <%}%>
 <div class="paperheader-bg" data-find="bg"></div>
 <div class="paperheader-content">

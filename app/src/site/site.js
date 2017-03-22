@@ -242,6 +242,14 @@ Module({
             $("body").scrollingTop($(window).height() * 2 / 3);
         });
     },
+    find_bgimg:function (dom) {
+        var url=dom.cache(),ths=this;
+        $.loader().image(url,function () {
+            dom.css("background-image","url("+url+")").transition().all({
+                time:500
+            }).scope().css("opacity","1");
+        });
+    },
     service_scroll: function (data) {
         var t = data.scroll;
         var dom = this.finders("bg");
