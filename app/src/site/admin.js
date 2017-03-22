@@ -195,6 +195,9 @@ Module({
     update:function(data) {
         this.setValue(data.content);
         this.original("update",data);
+        if(data.image) {
+            this.getChildByType(this.option.imageType).setImage(sitePath + data.image);
+        }
     }
 });
 Module({

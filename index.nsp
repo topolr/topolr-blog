@@ -21,20 +21,9 @@
     "map": {
         "d": true,
         "m": {
-            "j": {
-                "lib.ace.ace": "3fe59e8cb2"
-            },
             "p": {
-                "site.admin": "a8d506aca1",
-                "site.service.admin": "06e7e41d68",
-                "site.service.apiconfig": "e914c8486a",
-                "site.service.base": "cd2f3d1589",
-                "site.service.site": "fa61306c15",
-                "site.setting": "3fad7e3f06",
-                "site.site": "8f3488bbfc",
-                "util.editor": "4175a0682f",
                 "util.file": "07144b2f98",
-                "util.images": "03911758e8",
+                "util.images": "f30b43085a",
                 "util.router": "3c3afc23f8",
                 "util.uikit": "1bd99ab1fb",
                 "config": "3d81191e06",
@@ -48,19 +37,29 @@
                 "option.nofind": "1949b7a7b5",
                 "option.root": "fa233085de",
                 "option.userinfo": "8739016019",
-                "site.editor": "e8201fd2e5"
+                "site.admin": "565f341afd",
+                "site.editor": "e8201fd2e5",
+                "site.service.admin": "d14cdc4a72",
+                "site.service.apiconfig": "a97a3628e0",
+                "site.service.base": "cd2f3d1589",
+                "site.service.site": "fa61306c15",
+                "site.setting": "3fad7e3f06",
+                "site.site": "e35ad7a866"
             },
             "c": {
-                "site.style.grid": "6a901b07b8",
-                "site.style.main": "de03f196e6",
-                "site.style.style": "a471e34377",
                 "util.style.images": "80c5adaef4",
-                "util.style.uikit": "f2024b2adc"
+                "util.style.uikit": "f2024b2adc",
+                "site.style.grid": "6a901b07b8",
+                "site.style.main": "cdf7013c0b",
+                "site.style.style": "a471e34377"
             },
             "t": {
+                "util.template.imagestemp": "7a615cee41",
                 "site.template.admintemp": "e448f711f2",
-                "site.template.sitetemp": "367bca63fd",
-                "util.template.imagestemp": "7a615cee41"
+                "site.template.sitetemp": "563c5f6d0a"
+            },
+            "j": {
+                "lib.ace.ace": "3fe59e8cb2"
             }
         },
         "c": {

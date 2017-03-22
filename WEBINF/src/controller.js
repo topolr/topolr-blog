@@ -205,6 +205,24 @@ Module({
         }, function (e) {
             return this.getErrorView(e);
         });
+    },
+    "/detail": function () {
+        return this.getStore("article").scope(this).then(function (db) {
+            return db.find(this.request.getParameters(), {
+                title: 1,
+                desc: 1,
+                createTime: 1,
+                content: 1,
+                id:1,
+                image:1
+            });
+        }).then(function (data) {
+            if (data.length > 0) {
+                return this.getSuccessView(data[0]);
+            } else {
+                return this.getErrorView();
+            }
+        });
     }
 });
 Module({
@@ -236,6 +254,7 @@ Module({
                 comment:[]
             });
             var b=this.request.getParameters(["articleid"]);
+            data[0].comment||(data[0].comment=[]);
             data[0].comment.push(a);
             mdb.update({id:b.articleid},data[0],{});
         }).then(function () {

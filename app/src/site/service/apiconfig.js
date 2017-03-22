@@ -5,6 +5,7 @@ var config = {
     login: "api/admin/login",
     articlelist: "article/list",
     articledetail:"article/detail",
+    apiarticledetail:"api/admin/article/detail",
     edituserinfo:"api/admin/user/edit",
     addarticle:"api/admin/article/add",
     editarticle:"api/admin/article/edit",

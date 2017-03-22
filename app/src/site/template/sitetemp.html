@@ -30,35 +30,35 @@
         <div class="row mid-fix on480-row-2col on768-row-3col">
             <div class="span1-6">
                 <a class="base-header-projects-item" href="http://brightjs.org" target="_blank">
-                    <img src="site/style/images/01.png"/>
+                    <img src="site/style/images/07.png"/>
                     <div class="base-header-projects-item-tip">An awesome web framework.</div>
                     <div class="base-header-projects-item-name">BrightJS</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brightbuilder" target="_blank">
-                    <img src="site/style/images/02.png"/>
+                    <img src="site/style/images/01.png"/>
                     <div class="base-header-projects-item-tip">Build the projects which run with the BrightJS web framework.</div>
                     <div class="base-header-projects-item-name">BrightBuilder</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brighttoolkit" target="_blank">
-                    <img src="site/style/images/03.png"/>
+                    <img src="site/style/images/02.png"/>
                     <div class="base-header-projects-item-tip">Chrome Develop Toolkit for BrightJS Projects</div>
                     <div class="base-header-projects-item-name">BrightToolkit</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/corgiserver" target="_blank">
-                    <img src="site/style/images/04.png"/>
+                    <img src="site/style/images/03.png"/>
                     <div class="base-header-projects-item-tip">A web server running javascript like tomcat.</div>
                     <div class="base-header-projects-item-name">corgiserver</div>
                 </a>
             </div>
             <div class="span1-6">
                 <a class="base-header-projects-item" href="https://github.com/hou80houzhu/brightserver" target="_blank">
-                    <img src="site/style/images/05.png"/>
+                    <img src="site/style/images/04.png"/>
                     <div class="base-header-projects-item-tip">Java web MVC framework. PageMaker is a part of it.To build custom and responsibility website.</div>
                     <div class="base-header-projects-item-name">PageMaker</div>
                 </a>
@@ -98,13 +98,16 @@
 <!--[papercontent]-->
 <div class="papercontent-con"><%=data;%></div>
 <!--[paperheader]-->
+<%if(data.image){%>
+<div class="paperheader-image-bg" style="background-image:url(<%=data.image;%>);"></div>
+<%}%>
 <div class="paperheader-bg" data-find="bg"></div>
 <div class="paperheader-content">
     <div class="paperheader-content-con">
         <div class="paperheader-content-title" data-find="title"><%=data.title;%></div>
         <div class="paperheader-content-desc">
             <div class="paperheader-content-desc-author">
-                <div class="paperheader-content-desc-author-icon"><img src="<%=data.images||'site/style/images/logo.png';%>"/></div>
+                <div class="paperheader-content-desc-author-icon"><img src="site/style/images/logo.png"/></div>
                 <span class="paperheader-content-desc-author-name">Hou80houzhu</span>
                 <span class="paperheader-content-desc-author-time" data-find="time"><%=data.time;%></span>
             </div>

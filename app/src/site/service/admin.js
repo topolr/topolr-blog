@@ -39,7 +39,7 @@ Module({
     },
     service_fetch:function (query) {
         this.stop();
-        return this.postRequest(require("@apiconfig").get("articledetail"),query).scope(this).then(function (e) {
+        return this.postRequest(require("@apiconfig").get("apiarticledetail"),query).scope(this).then(function (e) {
             this.start();
             return e;
         },function () {

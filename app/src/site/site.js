@@ -69,6 +69,9 @@ Module({
     setContentPage: function () {
         if (this.parameters.query) {
             this.getService("article").trigger("fetch", this.parameters.query).scope(this).then(function (t) {
+                if(t.image){
+                    t.image=sitePath+t.image;
+                }
                 this.getChildAt(0).update(t);
                 this.getChildAt(1).update(t.content);
                 this.dispatchEvent("contentdone");
