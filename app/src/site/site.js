@@ -134,6 +134,15 @@ Module({
     }
 });
 Module({
+    name: "noadminhead",
+    extend: "view",
+    className: "adminhead",
+    template: "@sitetemp.noadminhead",
+    init: function () {
+        this.render();
+    }
+});
+Module({
     name: "nofind",
     extend: "view",
     className: "nofind",
@@ -236,7 +245,9 @@ Module({
     service_scroll: function (data) {
         var t = data.scroll;
         var dom = this.finders("bg");
-        dom.css("opacity", 1 * (t / dom.height()));
+        dom.transition().all({
+            time:500
+        }).scope().css("opacity", 1 * (t / dom.height()));
         if (t > dom.height()) {
             this.dom.addClass("show");
         } else {

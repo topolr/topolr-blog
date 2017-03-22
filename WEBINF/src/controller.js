@@ -74,6 +74,7 @@ Module({
             return db.find(this.request.getParameters());
         }).then(function (data) {
             if (data.length > 0) {
+                this.request.getSession().setAttribute("user",data[0]);
                 return this.getSuccessView(data[0]);
             } else {
                 return this.getErrorView("user can not found");
@@ -81,6 +82,13 @@ Module({
         }, function (e) {
             return this.getErrorView("user can not found");
         })
+    },
+    "/admin/session":function () {
+        if (this.request.getSession().hasAttribute("user")) {
+            this.getSuccessView();
+        } else {
+            this.getErrorView();
+        }
     }
 });
 
@@ -145,8 +153,15 @@ Module({
 });
 Module({
     name: "adminarticle",
-    extend: ["storecontroller", "@.basecontroller"],
+    extend: ["storecontroller", "@.basecontroller","@.openarticle"],
     path: "/api/admin/article",
+    before: function (next, end) {
+        if (this.request.getSession().hasAttribute("user")) {
+            next();
+        } else {
+            end(this.getJsonView({code: "2"}));
+        }
+    },
     "/edit": function () {
         var ps = null;
         var file = this.request.getParameter("file");
@@ -199,10 +214,11 @@ Module({
     },
     "/remove": function () {
         return this.getStore("article").scope(this).then(function (db) {
-            return db.remove(this.getParamters(["id"], {}));
+            return db.remove(this.request.getParameters("id"));
         }).then(function (data) {
             return this.getSuccessView(data);
         }, function (e) {
+            console.log(e)
             return this.getErrorView(e);
         });
     },

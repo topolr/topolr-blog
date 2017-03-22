@@ -7,7 +7,7 @@ $.overrideModule("data",{
             if (a.code && a.code === "1") {
                 promise.resolve(a.data);
             } else if (a.code && a.code === "2") {
-                this.dispatchEvent("openPage", {url: "login"});
+                $.app().gotoPage("login");
             } else {
                 promise.reject(a);
             }

@@ -45,5 +45,15 @@ Module({
         },function () {
             this.start();
         });
+    },
+    service_remove:function (id) {
+        this.stop();
+        return this.postRequest(require("@apiconfig").get("apiarticleremove"),{id:id}).scope(this).then(function (e) {
+            this.start();
+            return e;
+        },function (e) {
+            this.start();
+            return e;
+        });
     }
 });

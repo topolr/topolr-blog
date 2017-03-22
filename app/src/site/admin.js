@@ -64,11 +64,12 @@ Module({
     autodom:true,
     services:{
         scroll:"@base.scrollservice",
-        list:"@base.listservice"
+        list:"@base.listservice",
+        article:"@admin.articleservice"
     },
     option: {
         service_list:{
-            url:require("@apiconfig").get("articlelist"),
+            url:require("@apiconfig").get("apiarticlelist"),
             detail:require("@apiconfig").get("articledetail"),
             pagesize:10
         }
@@ -97,8 +98,18 @@ Module({
         });
     },
     group_item:function (dom) {
+        var ths=this;
         dom.items("remove").click(function () {
-            console.log($(this).group().cache())
+            $.loadingbar().showLoading();
+            ths.getService("article").trigger("remove",$(this).group().cache().id).scope(ths).then(function (e) {
+                $.loadingbar().showSuccess();
+                this.getService("list").trigger("refresh");
+            },function () {
+                console.log("------->2")
+                $.loadingbar().showError();
+            }).fail(function () {
+                console.log("--------3")
+            });
         })
     },
     service_scroll:function () {

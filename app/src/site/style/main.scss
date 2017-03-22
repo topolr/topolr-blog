@@ -309,9 +309,7 @@
         bottom:0;
         background:black;
         opacity:0;
-        -webkit-transition:all ease-out .5s;
-        -moz-transition:all ease-out .5s;
-        transition:all ease-out .5s;
+        //transition:all ease-out .5s;
     }
     .paperheader-content{
         position:absolute;

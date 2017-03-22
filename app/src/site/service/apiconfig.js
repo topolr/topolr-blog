@@ -6,6 +6,8 @@ var config = {
     articlelist: "article/list",
     articledetail:"article/detail",
     apiarticledetail:"api/admin/article/detail",
+    apiarticleremove:"api/admin/article/remove",
+    apiarticlelist:"api/admin/article/list",
     edituserinfo:"api/admin/user/edit",
     addarticle:"api/admin/article/add",
     editarticle:"api/admin/article/edit",
