@@ -20,7 +20,6 @@ Option({
                 });
                 var ths=this;
                 $.app().gotoPage=function (url) {
-                    console.log(data)
                     ths.getChildByType("@site.pagecontainer").dispatchEvent("openPage",{url:url});
                 }
             }
