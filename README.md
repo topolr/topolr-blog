@@ -1,8 +1,6 @@
 ![topolr-blog](https://github.com/topolr/topolr-blog/raw/master/logo.png)
 ---------------------------
 [![Build Status](https://travis-ci.org/topolr/topolr-blog.svg?branch=master)](https://travis-ci.org/topolr/topolr-blog)
-[![npm version](https://badge.fury.io/js/topolr-blog.svg)](https://badge.fury.io/js/topolr-blog)
-[![npm](https://img.shields.io/npm/dt/topolr-blog.svg?maxAge=2592000)](https://www.npmjs.com/package/topolr-blog)
 [![license](https://img.shields.io/github/license/topolr/topolr-blog.svg?maxAge=2592000)](https://github.com/topolr/topolr-blog/blob/master/LICENSE)
 
 A simple blog powered by topolr
