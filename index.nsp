@@ -10,6 +10,12 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#52AABE">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%=request.getHttpPath();%>src/site/style/images/144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%=request.getHttpPath();%>src/site/style/images/114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%=request.getHttpPath();%>src/site/style/images/72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<%=request.getHttpPath();%>src/site/style/images/57.png">
+    <link rel="shortcut icon" href="<%=request.getHttpPath();%>src/site/style/images/144.png">
     <script src="<%=request.getHttpPath();%>node_modules/topolr/topolr.js" type="text/javascript"></script>
     <script>
         App({
