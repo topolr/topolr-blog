@@ -21,9 +21,9 @@ Module({
     },
     action: function () {
         // if(this.checkPath(this.request.getURL())){
-        //     return this.getCetusView();
+            return this.getCetusView();
         // }else {
-        return this.getDefaultPageView("index", {});
+        // return this.getDefaultPageView("index", {});
         // }
     },
     checkPath: function (url) {
