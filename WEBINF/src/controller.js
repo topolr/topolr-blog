@@ -54,15 +54,8 @@ Module({
 });
 Module({
     name:"youdaoapi",
-    extend: ["storecontroller", "@.basecontroller"],
-    path:"",
-    actionPaths:function () {
-        return this.getContext().getService("proxyservice").getAPIPaths("youdao");
-    },
-    action:function () {
-        var name=this.getContext().getService("proxyservice").getAPIName("youdao",this.request.getProjectURL());
-        return this.getProxyView("youdao", name);
-    }
+    extend: "proxycontroller",
+    proxyName:"youdao"
 });
 Module({
     name: "api",
