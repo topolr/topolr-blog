@@ -4,7 +4,6 @@
     },
     "listener":"listener.base",
     "service":[
-        {"name":"mvcservice"},
         {"name":"localdb","option":{
             "path":"{project}/db/",
             "initData":{
@@ -34,7 +33,8 @@
                     "test":"/mil/"
                 }
             }
-        }}
+        }},
+        {"name":"mvcservice"}
     ],
     "filter":[
         {"name":"mvcfilter","option":{}},
