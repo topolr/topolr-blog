@@ -1,0 +1,34 @@
+mock:
+  type: page
+  rate: 80
+  option:
+    total: 210
+    num: page
+    size: pagesize
+    list: data.list
+
+url: /test/page
+method: post
+request:
+  page: str
+  pagesize: str
+response-success:
+  code: str(1,1)
+  data:
+    total: data(mock.option.total)
+    test: test
+    list:
+      - id: str(uuid,32)
+        name: str(name,32)
+        m: "0"
+        sex: int(0-1,1)
+        birth: date(2016/1/1-2020/1/1,yyyy-MM-dd hh:mm:ss)
+        birth2: date(2016/1/1-2020/1/1)
+        pid: parent(0,id)
+        list [0-2]:
+          - id: parent(2,id)
+            test: str(name,20)
+response-error:
+  code: "0"
+  data: []
+  msg: str()

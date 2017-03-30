@@ -34,10 +34,15 @@
                 }
             }
         }},
+        {"name":"mockservice","option":{
+            "path": "{project}mock/",
+            "builterPath": "{project}mock/builters/",
+            "parserPath": "{project}mock/parsers/"
+        }},
         {"name":"mvcservice"}
     ],
     "filter":[
-        {"name":"mvcfilter","option":{}},
+        {"name":"mvcfilter"},
         {"name":"cachefilter","option":{
             "etag":true,
             "cacheSetting":{
