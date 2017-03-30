@@ -43,6 +43,7 @@
     ],
     "filter":[
         {"name":"mvcfilter"},
+        {"name":"mockfilter"},
         {"name":"cachefilter","option":{
             "etag":true,
             "cacheSetting":{
