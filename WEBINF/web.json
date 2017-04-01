@@ -32,6 +32,15 @@
                 "apis":{
                     "test":"/mil/"
                 }
+            },
+            "fx":{
+                "host":"183.196.88.54",
+                "port":8082,
+                "apis":{
+                    "session":"/packet/brooder.core.js",
+                    "login":"/user/login",
+                    "info":"/task/list"
+                }
             }
         }},
         {"name":"mockservice","option":{

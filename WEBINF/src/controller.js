@@ -9,7 +9,7 @@ Module({
     path: "",
     actionPaths: function () {
         var config = require("../../app/src/config.js");
-        var paths = ["/"];
+        var paths = [];
         for (var i in config) {
             var path = "/" + i;
             if (paths.indexOf(path) === -1) {
@@ -26,6 +26,16 @@ Module({
         return this.getDefaultPageView("index", {});
         // }
     },
+    // "/":function () {
+    //     return this.forward({
+    //         hostName: "fx",
+    //         apiName: "session"
+    //     }).scope(this).done(function (result) {
+    //         return this.getStringView(result.data);
+    //     }).fail(function () {
+    //         return this.getDefaultPageView(500, "proxy request error");
+    //     });
+    // },
     checkPath: function (url) {
         var name = this.getContext().getProjectName();
         var t = url.split("?")[0].substring(name.length + 2);
@@ -57,6 +67,12 @@ Module({
     extend: "proxycontroller",
     active: true,
     proxyName:"youdao"
+});
+Module({
+    name:"fxapi",
+    extend: "proxycontroller",
+    active: true,
+    proxyName:"fx"
 });
 Module({
     name: "api",
