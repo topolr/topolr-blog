@@ -37,9 +37,17 @@
                 "host":"183.196.88.54",
                 "port":8082,
                 "apis":{
-                    "session":"/packet/brooder.core.js",
+                    "session":"/login.jsp",
                     "login":"/user/login",
-                    "info":"/task/list"
+                    "info":"/task/list",
+                    "upload":"/file/upload"
+                }
+            },
+            "chat":{
+                "host":"localhost",
+                "port":8080,
+                "apis":{
+                    "info":"/chat/tt"
                 }
             }
         }},

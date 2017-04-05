@@ -23,7 +23,7 @@ Module({
         // if(this.checkPath(this.request.getURL())){
         //     return this.getCetusView();
         // }else {
-        return this.getDefaultPageView("index", {});
+        return this.getIndexView("index", {});
         // }
     },
     // "/":function () {
@@ -73,6 +73,12 @@ Module({
     extend: "proxycontroller",
     active: true,
     proxyName:"fx"
+});
+Module({
+    name:"chatapi",
+    extend: "proxycontroller",
+    active: true,
+    proxyName:"chat"
 });
 Module({
     name: "api",
