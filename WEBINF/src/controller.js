@@ -98,18 +98,29 @@ Module({
         });
     },
     "/admin/login": function () {
-        return this.getStore("user").scope(this).then(function (db) {
-            return db.find(this.request.getParameters());
-        }).then(function (data) {
-            if (data.length > 0) {
-                this.request.getSession().setAttribute("user",data[0]);
-                return this.getSuccessView(data[0]);
-            } else {
-                return this.getErrorView("user can not found");
+        return this.request.getSession().hasAttribute("user").scope(this).then(function (r) {
+            if(!r){
+                console.log("------------>>00")
+                return this.getStore("user").scope(this).then(function (db) {
+                    return db.find(this.request.getParameters());
+                }).then(function (data) {
+                    if (data.length > 0) {
+                        return this.request.getSession().setAttribute("user",data[0]).scope(this).then(function () {
+                            return this.getSuccessView(data[0]);
+                        });
+                    } else {
+                        return this.getErrorView("user can not found");
+                    }
+                }, function (e) {
+                    return this.getErrorView("user can not found");
+                });
+            }else{
+                console.log("------------>>11")
+                return this.request.getSession().getAttribute("user").scope(this).then(function (a) {
+                    return this.getSuccessView(a)
+                });
             }
-        }, function (e) {
-            return this.getErrorView("user can not found");
-        })
+        });
     },
     "/admin/session":function () {
         if (this.request.getSession().hasAttribute("user")) {
